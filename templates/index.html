@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Remover</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Remove Image Background</h2>
+        <div id="drop-area" class="drag-box">
+            <input type="file" id="fileInput" accept="image/*" hidden>
+            <img src="{{ url_for('static', filename='upload-icon.png') }}" alt="Upload" class="upload-icon">
+            <p>Drag & Drop an image here or <span onclick="document.getElementById('fileInput').click()">Browse</span></p>
+        </div>
+        <div id="preview-container" class="preview-box">
+            <img id="preview-image" src="" alt="Selected Image" class="hidden">
+            <div id="loader" class="loader hidden"></div>
+        </div>
+        <button id="remove-bg-btn" disabled>Remove Background</button>
+        <a id="download-btn" download="processed.png" class="hidden">Download Image</a>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
